@@ -17,13 +17,29 @@
     font-size: 1.5rem;
     color:rgb(103, 10, 0);
 }
+
 #book_rack{
+    box-sizing: border-box;
     display: flex;
     border: 1px solid black;
     height: 95%;
     width: 100%;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 16px;
+    padding: 1rem;
+    
+}
+#book_rack>div {
+    border: 1px solid green;
+    border-radius: 4px;
+    background-color: rgba(2, 37, 37, 0.15);
+    height: max-content;
+    padding: 4px;
+    box-shadow: 4px 4px 8px blueviolet;
+}
+
+#book_rack>div:hover {
+    transform: scale(1.2);
 }
 /* footer */
 .footer {
@@ -37,7 +53,7 @@
 /* button */
 .footer button {
     width: 15%;
-    height: 30%;
+    height: 50%;
     padding: 0.5em;
     display: block;
     margin: 0.5em auto;
