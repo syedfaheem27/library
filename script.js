@@ -29,6 +29,7 @@ function addBookToLibrary(title,author,pages) {
    div_container.appendChild(div1);
    div_container.appendChild(div2);
    div_container.appendChild(div3);
+   
 }
 
   add_book.addEventListener('click',formAppear);
@@ -76,7 +77,7 @@ function formAppear () {
 
        button_submit.addEventListener('click',() => {
         addBookToLibrary(input1.value,input2.value,input3.value);
-        form.style.display='none';
+        // form.style.display='none';
         form.remove();
 
        })
