@@ -25,17 +25,21 @@
     height: 95%;
     width: 100%;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 2rem;
     padding: 1rem;
     align-content: flex-start;
+    background-color: rgba(128, 128, 128, 0.396);
 }
 #book_rack>div {
-    border: 1px solid green;
-    border-radius: 4px;
-    background-color: rgba(2, 37, 37, 0.15);
+    border: 2px solid rgb(191, 162, 35);
+    border-radius: 0.25rem;
+    background-color: rgba(255, 45, 45, 0.5);
     height: max-content;
-    padding: 4px;
-    box-shadow: 4px 4px 8px blueviolet;
+    padding: 0.5rem;
+    box-shadow: 4px 4px 8px rgb(9, 3, 15);
+    width: max(8vw,max-content);
+    height: max(8vh,max-content);
+    text-align: center;
 }
 
 #book_rack>div:hover {
@@ -79,18 +83,35 @@
 
 /* form */
 form {
+    box-sizing: border-box;
     position: absolute;
     border: 3px solid black;
-    top: 0;
-    left: 0;
+    top: 30vh;
+    left: 30vw;
     background-color: brown;
-    padding: 12px;
+    width: 30vw;
+    height: 30vh;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px black;
+    
 }
 form>label {
     display: block;
-    margin-top: 8px;
+    margin-top: 1rem;
+    font-size: 1.25rem;
 }
 form>button {
     display: block;
-    margin-top: 8px;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+    background-color: rgb(198, 241, 225);
+}
+form>input {
+    border: none;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    outline: 1px solid black;
 }
