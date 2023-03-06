@@ -27,7 +27,7 @@
     flex-wrap: wrap;
     gap: 16px;
     padding: 1rem;
-    
+    align-content: flex-start;
 }
 #book_rack>div {
     border: 1px solid green;
@@ -46,8 +46,11 @@
     box-sizing: border-box;
     width: 100vw;
     height: 15vh;
+    display: flex;
     border: 1px solid green;
     padding: 0.5em;
+    justify-content: center;
+    gap: 8px;
 }
 
 /* button */
@@ -55,8 +58,7 @@
     width: 15%;
     height: 50%;
     padding: 0.5em;
-    display: block;
-    margin: 0.5em auto;
+    display: inline-block;
     border: 2px solid rgb(99, 41, 35);
     border-radius: 4px;
     box-shadow: 4px 4px 8px grey;
@@ -72,4 +74,23 @@
 .footer button:active{
     background-color: rgb(253, 92, 74);
     color: rgb(9, 9, 9); 
+}
+
+
+/* form */
+form {
+    position: absolute;
+    border: 3px solid black;
+    top: 0;
+    left: 0;
+    background-color: brown;
+    padding: 12px;
+}
+form>label {
+    display: block;
+    margin-top: 8px;
+}
+form>button {
+    display: block;
+    margin-top: 8px;
 }
