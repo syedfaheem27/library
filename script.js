@@ -9,10 +9,11 @@ let ind=0;
 
 let div_container=[];
 
-function Book (title,author,pages) {
+function Book (title,author,pages,current_status) {
   this.title=title;
   this.author=author;
   this.pages=pages;
+  this.current_status=current_status;
 }
 
 
@@ -41,7 +42,7 @@ function formAppear() {
     //Creating and appending labels and input fields to the form
     let myLabel=[];
     let myInput=[];
-    for(let i=0;i<3;i++){
+    for(let i=0;i<4;i++){
       myLabel[i]=document.createElement('label');
       form.appendChild(myLabel[i]);
     
@@ -61,13 +62,22 @@ function formAppear() {
           myInput[i].setAttribute('type','text');
           myInput[i].setAttribute('id','author');
           break;
-       default:
+        case 2:
           myLabel[i].setAttribute('for','pages');
           myLabel[i].textContent="Pages";
           myInput[i].setAttribute('type','number');
-          myInput[i].setAttribute('id','pages');   
+          myInput[i].setAttribute('id','pages'); 
+          break;  
+        default:
+          myLabel[i].setAttribute('for','current_status');
+          myLabel[i].textContent="Read";
+          myInput[i].setAttribute('type','checkbox');
+          myInput[i].setAttribute('id','current_status');
+          myInput[i].setAttribute('value','read');
       }
     }
+    
+
       //create a submit button for form
       const form_submit=document.createElement('button');
       form.appendChild(form_submit);
@@ -79,7 +89,7 @@ function formAppear() {
       //functionality for the form_submit button
   form_submit.addEventListener('click',()=> {
     submit_flag=true;
-    addBookToLibrary(myInput[0].value,myInput[1].value,myInput[2].value);
+    addBookToLibrary(myInput[0].value,myInput[1].value,myInput[2].value,myInput[3].value);
     form.remove();
   })
           }
@@ -95,14 +105,14 @@ function formAppear() {
 }
 
 //a function that adds books to library
-function addBookToLibrary(title,author,pages) {
-  books[ind]=new Book(title,author,pages);
+function addBookToLibrary(title,author,pages,current_status) {
+  books[ind]=new Book(title,author,pages,current_status);
 
   div_container[ind]=document.createElement('div');
   book_rack.appendChild(div_container[ind]);
 
   //creating div_container and the three div's inside it that holds title,author and pages
-  for(let i=0;i<3;i++){
+  for(let i=0;i<4;i++){
     mydiv[i]=document.createElement('div');
     div_container[ind].appendChild(mydiv[i]);
 
@@ -111,12 +121,22 @@ function addBookToLibrary(title,author,pages) {
         mydiv[i].textContent='Title: '+title;
         break;
       case 1:
-          mydiv[i].textContent='Author: '+title;
+          mydiv[i].textContent='Author: '+author;
+          break;
+      case 2:
+          mydiv[i].textContent='Pages: '+pages;
           break;
       default:
-          mydiv[i].textContent='Pages: '+pages;
+        console.log(current_status==='read');
+          if(current_status==='read'){
+            mydiv[i].textContent='Current Status: Read';
+          }
+          else {
+            mydiv[i].textContent='Current Status: Yet to read';
+          }
 
     }
   }
+  
   ind++;
 }
