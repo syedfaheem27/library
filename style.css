@@ -1,118 +1,32 @@
-
-
 /* header */
-.header{
-    box-sizing: border-box;
-    padding: 0.5em;
-    border: 3px solid gold;
-    width: 100vw;
-    height: 85vh;
-}
-.header h1{
-    width: 100%;
-    height: 5%;
-    text-align: center;
+h1{
     margin: 0;
-    border: 1px solid green;
-    font-size: 1.5rem;
-    color:rgb(103, 10, 0);
 }
-
-#book_rack{
+.header>div{
     box-sizing: border-box;
-    display: flex;
-    border: 1px solid black;
-    height: 95%;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 2rem;
+    border: 1px solid green;
     padding: 1rem;
-    align-content: flex-start;
-    background-color: rgba(128, 128, 128, 0.396);
-}
-#book_rack>div {
-    border: 2px solid rgb(191, 162, 35);
-    border-radius: 0.25rem;
-    background-color: rgba(255, 45, 45, 0.5);
-    height: max-content;
-    padding: 0.5rem;
-    box-shadow: 4px 4px 8px rgb(9, 3, 15);
-    width: max(8vw,max-content);
-    height: max(8vh,max-content);
+    background-image: linear-gradient(90deg,rgba(255, 255, 0, 0.63),rgba(0, 111, 128, 0.219),rgba(255, 0, 0, 0.579));
+    width: 100vw;
+    height: 10vh;
     text-align: center;
 }
-
-#book_rack>div:hover {
-    transform: scale(1.2);
-}
-/* footer */
-.footer {
+.header>div button {
     box-sizing: border-box;
-    width: 100vw;
-    height: 15vh;
-    display: flex;
-    border: 1px solid green;
-    padding: 0.5em;
-    justify-content: center;
-    gap: 8px;
-}
-
-/* button */
-.footer button {
-    width: 15%;
-    height: 50%;
-    padding: 0.5em;
-    display: inline-block;
-    border: 2px solid rgb(99, 41, 35);
-    border-radius: 4px;
-    box-shadow: 4px 4px 8px grey;
-    background-color: rgba(250, 128, 114, 0.307);
-    font-weight: bold;
-    color: rgb(14, 9, 9); 
-}
-.footer button:hover{
-    transform: scale(1.3);
-    background-color: rgb(250, 128, 114);
-    color: rgb(16, 14, 14); 
-}
-.footer button:active{
-    background-color: rgb(253, 92, 74);
-    color: rgb(9, 9, 9); 
-}
-
-
-/* form */
-form {
-    box-sizing: border-box;
-    position: absolute;
-    border: 3px solid black;
-    top: 30vh;
-    left: 30vw;
-    background-color: brown;
-    width: 30vw;
-    height: 30vh;
-    padding: 1rem;
-    border-radius: 4px;
-    box-shadow: 4px 4px 8px black;
-    
-}
-form>label {
-    display: block;
-    margin-top: 1rem;
-    font-size: 1.25rem;
-}
-form>button {
-    display: block;
-    margin-top: 1rem;
     border: 2px solid black;
-    border-radius: 0.25rem;
-    font-size: 1.25rem;
-    background-color: rgb(198, 241, 225);
+    border-radius: 4px;
+    width: 10%;
+    height: 60%;
+    padding: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: bold;
 }
-form>input {
-    border: none;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    outline: 1px solid black;
+.header>div button:hover{
+    transform: scale(1.3);
+    background-color: rgba(117, 101, 0, 0.752);
+    color: white;
+}
+.header>div button:active{
+    background-color: rgb(52, 45, 1);
 }
 
