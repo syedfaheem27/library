@@ -48,15 +48,26 @@ h1{
     
 }
 .body>div {
-    border: 2px solid red;
-    width: 300px;
-    height: 300px;
+    box-sizing: border-box;
+    border: 3px solid rgb(11, 11, 11);
+    width: clamp(15rem,25%,20rem);
+    height: clamp(15rem,25%,20rem);
+    padding: 1rem;
+    background-color: rgb(65, 2, 37);
+    box-shadow: 4px 4px 12px white,-4px -4px 12px white;
+    border-radius: 0.5rem;
 }
 .body>div>div {
+    box-sizing: border-box;
     color: white;
-    border: 1px solid blue;
+    margin: 0.25rem auto;
 }
-
+.body>div:hover {
+    transform: scale(1.1);
+}
+.body>div>div:hover {
+   transform: scale(1.075);
+}
 
 /* footer */
 .footer {
