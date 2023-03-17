@@ -2,10 +2,10 @@ let myLibrary=[];
 
 
 function Book(title,author,pages,status) {
-  this.title=title;
-  this.author=author;
-  this.pages=pages;
-  this.status=status;
+  this.Title=title;
+  this.Author=author;
+  this.Pages=pages;
+  this.Status=status;
 }
 
 
@@ -17,9 +17,21 @@ function addBookToLibrary() {
     div_body.appendChild(div_container);
 
     for(let prop in myLibrary[i]){
+      if(prop=='Status'){
       const div=document.createElement('div');
       div_container.appendChild(div);
-      div.textContent=`${prop}: ${myLibrary[i][prop]}`
+      if(myLibrary[i][prop]){
+        div.textContent=prop+': Read';
+      }
+      else{
+        div.textContent=prop+': Not read';
+      }
+      }
+      else{
+      const div=document.createElement('div');
+      div_container.appendChild(div);
+      div.textContent=prop+': '+myLibrary[i][prop];
+      }
     }
   
 
