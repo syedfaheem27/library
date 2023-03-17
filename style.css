@@ -47,6 +47,15 @@ h1{
     align-content: flex-start;
     
 }
+.body>div {
+    border: 2px solid red;
+    width: 300px;
+    height: 300px;
+}
+.body>div>div {
+    color: white;
+    border: 1px solid blue;
+}
 
 
 /* footer */
