@@ -25,12 +25,15 @@ function addBookToLibrary(form) {
 
   for (let prop in myLibrary[n]) {
     if (prop == "Status") {
-      const div = document.createElement("div");
-      myBooks[n].appendChild(div);
+      const button_div= document.createElement("button");
+      myBooks[n].appendChild(button_div);
+      button_div.addEventListener('click',changeStatus);
       if (myLibrary[n][prop]) {
-        div.textContent = prop + ": Read";
+        button_div.textContent = "Read";
+        button_div.classList.add('read');
       } else {
-        div.textContent = prop + ": Not read";
+        button_div.textContent = "Not read";
+        button_div.classList.add('not_read');
       }
     } else {
       const div = document.createElement("div");
@@ -41,6 +44,7 @@ function addBookToLibrary(form) {
   submit_flag = true;
   form.remove();
   n++;
+  
 }
 
 const addbook = document.querySelector("#add");
@@ -92,7 +96,7 @@ function formAppear() {
           myInputs[i].setAttribute("type", "checkbox");
           myInputs[i].setAttribute("id", "status");
           myInputs[i].setAttribute("data-name", "input");
-          break;
+         
       }
     }
     const submit_button = document.createElement("button");
@@ -105,5 +109,18 @@ function formAppear() {
     });
   } else {
     return;
+  }
+}
+
+function changeStatus(event) {
+  if(event.target.classList.value=='read'){
+    event.target.classList.remove('read');
+    event.target.classList.add('not_read');
+    event.target.textContent="Not Read";
+  } 
+  else {
+    event.target.classList.remove('not_read');
+    event.target.classList.add('read');
+    event.target.textContent="Read";
   }
 }

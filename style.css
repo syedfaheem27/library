@@ -68,6 +68,24 @@ h1{
 .body>div>div:hover {
    transform: scale(1.075);
 }
+.body>div>button {
+    box-sizing: border-box;
+    margin: 0.5rem 0;
+    width: 40%;
+    border: none;
+    outline: 2px solid black;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.body .read{
+   background-color: rgba(0, 128, 0, 0.493);
+}
+.body .not_read{
+   background-color: rgba(255, 0, 0, 0.536);
+}
+
 
 /* footer */
 .footer {
