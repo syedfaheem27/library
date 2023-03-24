@@ -117,15 +117,20 @@ function formAppear() {
 }
 
 function changeStatus(event) {
+  const parent=event.target.parentNode;
+  const index=parent.getAttribute('data-index');
+  console.log(parent);
   if(event.target.textContent=='Read'){
     event.target.textContent="Not Read";
     event.target.classList.remove('read');
     event.target.classList.add('not_read');
+    myLibrary[index].Status=false;
   }
   else {
     event.target.textContent="Read";
     event.target.classList.remove('not_read');
     event.target.classList.add('read');
+    myLibrary[index].Status=true;
   }
   }
  
