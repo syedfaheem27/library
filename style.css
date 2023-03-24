@@ -65,7 +65,8 @@ h1{
 .body>div:hover {
     transform: scale(1.1);
 }
-.body>div>div:hover {
+.body>div>div:hover,
+.body>div>button:hover {
    transform: scale(1.075);
 }
 .body>div>button {

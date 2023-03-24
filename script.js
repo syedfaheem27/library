@@ -1,8 +1,11 @@
 let myLibrary = [];
+
 let myBooks = [];
  //will hold the div elements being inserted in the div classed body
-let n = 0; 
+
+ let n = 0; 
 //denotes the index of myLibrary and myBooks array
+
 let submit_flag = true;
 //ensures that a new form is loaded once the user submits the existing form
 
@@ -21,6 +24,7 @@ function addBookToLibrary(form) {
   });
   myLibrary[n] = new Book(inputArray);
   myBooks[n] = document.createElement("div");
+  myBooks[n].setAttribute('data-index',n);
   div_body.appendChild(myBooks[n]);
 
   for (let prop in myLibrary[n]) {
@@ -44,8 +48,8 @@ function addBookToLibrary(form) {
   submit_flag = true;
   form.remove();
   n++;
-  
 }
+
 
 const addbook = document.querySelector("#add");
 addbook.addEventListener("click", formAppear);
@@ -113,14 +117,28 @@ function formAppear() {
 }
 
 function changeStatus(event) {
-  if(event.target.classList.value=='read'){
+  if(event.target.textContent=='Read'){
+    event.target.textContent="Not Read";
     event.target.classList.remove('read');
     event.target.classList.add('not_read');
-    event.target.textContent="Not Read";
-  } 
+  }
   else {
+    event.target.textContent="Read";
     event.target.classList.remove('not_read');
     event.target.classList.add('read');
-    event.target.textContent="Read";
   }
-}
+  }
+ 
+ 
+  
+  
+//   function removeBook(event) {
+    
+//     // const parent=event.target.parentNode;
+//     // parent.remove();
+//     // const index=parent.getAttribute('data-set');
+//     // myBooks.splice(index,1);
+//     // myLibrary.splice(index,1);
+//     // n--;
+
+// }
