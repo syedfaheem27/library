@@ -45,6 +45,10 @@ function addBookToLibrary(form) {
       div.textContent = prop + ": " + myLibrary[n][prop];
     }
   }
+  const rm_button=document.createElement('button');
+  myBooks[n].appendChild(rm_button);
+  rm_button.textContent="Remove";
+  rm_button.addEventListener('click',removeBook);
   submit_flag = true;
   form.remove();
   n++;
@@ -119,7 +123,7 @@ function formAppear() {
 function changeStatus(event) {
   const parent=event.target.parentNode;
   const index=parent.getAttribute('data-index');
-  console.log(parent);
+
   if(event.target.textContent=='Read'){
     event.target.textContent="Not Read";
     event.target.classList.remove('read');
@@ -137,13 +141,21 @@ function changeStatus(event) {
  
   
   
-//   function removeBook(event) {
+  function removeBook(event) {
     
-//     // const parent=event.target.parentNode;
-//     // parent.remove();
-//     // const index=parent.getAttribute('data-set');
-//     // myBooks.splice(index,1);
-//     // myLibrary.splice(index,1);
-//     // n--;
+    const parent=event.target.parentNode;
+    parent.remove();
+    const index=parent.getAttribute('data-index');
+    myBooks.splice(index,1);
+    myLibrary.splice(index,1);
+    
+    n--;
 
-// }
+    //changing the data-index attribute after removing a book
+    for(let i=index;i<n;i++){
+      let index_new=myBooks[i].getAttribute('data-index');
+      index_new-=1;
+      myBooks[i].setAttribute('data-index',index_new);
+    }
+
+}
