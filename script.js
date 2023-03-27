@@ -72,14 +72,14 @@ function formAppear() {
       myInputs[i] = document.createElement("input");
       form.appendChild(myLabels[i]);
       form.appendChild(myInputs[i]);
+      myInputs[i].setAttribute("data-name", "input");
 
       switch (i) {
         case 0:
           myLabels[i].setAttribute("for", "title");
           myLabels[i].textContent = "Title";
           myInputs[i].setAttribute("type", "text");
-          myInputs[i].setAttribute("id", "title");
-          myInputs[i].setAttribute("data-name", "input");
+          myInputs[i].setAttribute("id", "title");      
           break;
 
         case 1:
@@ -87,7 +87,6 @@ function formAppear() {
           myLabels[i].textContent = "Author";
           myInputs[i].setAttribute("type", "text");
           myInputs[i].setAttribute("id", "author");
-          myInputs[i].setAttribute("data-name", "input");
           break;
 
         case 2:
@@ -95,7 +94,6 @@ function formAppear() {
           myLabels[i].textContent = "Pages";
           myInputs[i].setAttribute("type", "number");
           myInputs[i].setAttribute("id", "pages");
-          myInputs[i].setAttribute("data-name", "input");
           break;
 
         default:
@@ -103,10 +101,10 @@ function formAppear() {
           myLabels[i].textContent = "Read";
           myInputs[i].setAttribute("type", "checkbox");
           myInputs[i].setAttribute("id", "status");
-          myInputs[i].setAttribute("data-name", "input");
          
       }
     }
+    
     const submit_button = document.createElement("button");
     form.appendChild(submit_button);
     submit_button.setAttribute("type", "button");
