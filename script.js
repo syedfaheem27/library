@@ -79,7 +79,9 @@ function formAppear() {
           myLabels[i].setAttribute("for", "title");
           myLabels[i].textContent = "Title";
           myInputs[i].setAttribute("type", "text");
-          myInputs[i].setAttribute("id", "title");      
+          myInputs[i].setAttribute("id", "title");  
+          myInputs[i].setAttribute("required",""); 
+          myInputs[i].setAttribute("maxlength","20");
           break;
 
         case 1:
@@ -87,6 +89,8 @@ function formAppear() {
           myLabels[i].textContent = "Author";
           myInputs[i].setAttribute("type", "text");
           myInputs[i].setAttribute("id", "author");
+          myInputs[i].setAttribute("required",""); 
+          myInputs[i].setAttribute("maxlength","20");
           break;
 
         case 2:
@@ -94,6 +98,8 @@ function formAppear() {
           myLabels[i].textContent = "Pages";
           myInputs[i].setAttribute("type", "number");
           myInputs[i].setAttribute("id", "pages");
+          myInputs[i].setAttribute("required","");     
+          myInputs[i].setAttribute("max","10000");
           break;
 
         default:
@@ -107,10 +113,10 @@ function formAppear() {
     
     const submit_button = document.createElement("button");
     form.appendChild(submit_button);
-    submit_button.setAttribute("type", "button");
+
     submit_button.textContent = "Submit";
 
-    submit_button.addEventListener("click", () => {
+    form.addEventListener('submit',()=>{
       addBookToLibrary(form);
     });
   } else {
